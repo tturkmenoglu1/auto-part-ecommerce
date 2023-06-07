@@ -1,18 +1,20 @@
 package com.ape.controller;
 
+import com.ape.dto.UserDTO;
+import com.ape.dto.request.LoginRequest;
 import com.ape.dto.request.RegisterRequest;
 import com.ape.security.jwt.JwtUtils;
 import com.ape.service.UserService;
 import com.ape.utility.APEResponse;
+import com.ape.utility.LoginResponse;
 import com.ape.utility.ResponseMessage;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -33,22 +35,19 @@ public class UserJwtController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-//    @PostMapping("/login")
-//    public ResponseEntity<LoginResponse> authenticate(@Valid @RequestBody LoginRequest loginRequest) {
-//
-//        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
-//                new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword());
-//
-//        Authentication authentication = authenticationManager.
-//                authenticate(usernamePasswordAuthenticationToken);
-//
-//        UserDetails userDetails = (UserDetails) authentication.getPrincipal();// mevcut giriş yapan kullanıcıyı getirir
-//
-//        String jwtToken = jwtUtils.generateJwtToken(userDetails);
-//
-//        LoginResponse loginResponse = new LoginResponse(jwtToken);
-//
-//        return new ResponseEntity<>(loginResponse, HttpStatus.OK);
-//
-//    }
+    @GetMapping(path = "/confirm")
+    public ResponseEntity<APEResponse> confirm(@RequestParam("token") String token) {
+        userService.confirmToken(token);
+        APEResponse response = new APEResponse(ResponseMessage.ACCOUNT_CONFIRMED_RESPONSE,true);
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponse> authenticate(@RequestHeader(value = "basketUUID", required = false)String basketUUID,@Valid @RequestBody LoginRequest loginRequest) {
+
+        LoginResponse loginResponse = userService.loginUser(basketUUID,loginRequest);
+
+        return new ResponseEntity<>(loginResponse, HttpStatus.OK);
+
+    }
 }

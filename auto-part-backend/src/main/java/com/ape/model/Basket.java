@@ -24,7 +24,7 @@ public class Basket {
     private Long id;
 
     @Column
-    private String cartUUID;
+    private String basketUUID;
     @Column
     private Double grandTotal = 0.0;
     @Column

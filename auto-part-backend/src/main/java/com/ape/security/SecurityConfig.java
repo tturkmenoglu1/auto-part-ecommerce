@@ -68,6 +68,7 @@ public class SecurityConfig {
             "/swagger-ui/**", // swagger
             "/",
             "index.html",
+            "/confirm",
             "/images/**",
             "/css/**",
             "/js/**"
