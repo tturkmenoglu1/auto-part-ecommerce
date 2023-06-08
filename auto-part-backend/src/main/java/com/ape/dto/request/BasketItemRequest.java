@@ -1,4 +1,4 @@
-package com.ape.utility;
+package com.ape.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,11 +7,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class LoginResponse {
+@NoArgsConstructor
 
-    private String token;
+public class BasketItemRequest {
 
-    private String basketUUID;
+    private Long productId;
+
+    private Integer quantity;
 }

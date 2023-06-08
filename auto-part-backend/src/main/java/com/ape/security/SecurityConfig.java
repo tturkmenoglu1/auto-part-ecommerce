@@ -31,20 +31,22 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain( HttpSecurity http ) throws Exception{
-        http.csrf(AbstractHttpConfigurer::disable).
-                sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)).
-                authorizeHttpRequests(auth -> auth.requestMatchers(
+        http.csrf().disable().
+                sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).
+                and().authorizeRequests().antMatchers(HttpMethod.OPTIONS,"/**").permitAll().and().
+                authorizeRequests().
+                antMatchers(
                         "/login",
                         "/register",
                         "/confirm",
                         "/image/**",
-                        "/categories/**",
-                        "/products/**",
+                        "/category/**",
+                        "/product/**",
                         "/basket/**",
-                        "/users/**",
-                        "/brands/**",
+                        "/user/**",
+                        "/brand/**",
                         "/database/**").permitAll().
-                anyRequest().authenticated());
+                anyRequest().authenticated();
 
         http.addFilterBefore(authTokenFilter(), UsernamePasswordAuthenticationFilter.class);
         return http.build();
@@ -76,7 +78,7 @@ public class SecurityConfig {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return web -> web.ignoring().requestMatchers(AUTH_WHITE_LIST);
+        return web -> web.ignoring().antMatchers(AUTH_WHITE_LIST);
     }
 
     @Bean

@@ -19,6 +19,7 @@ import com.ape.service.email.EmailService;
 import com.ape.utility.ErrorMessage;
 import com.ape.utility.LoginResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -52,7 +53,8 @@ public class UserService {
 
     private final BasketItemRepository basketItemRepository;
 
-    private final AuthenticationManager authenticationManager;
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
     private final JwtUtils jwtUtils;
 
@@ -73,7 +75,7 @@ public class UserService {
         if (userRepository.existsByEmail(registerRequest.getEmail())){
             user = getUserByEmail(registerRequest.getEmail());
             if(user.getStatus()!= UserStatus.ANONYMOUS) {
-                throw new ConflictException(String.format(ErrorMessage.EMAIL_EXIST_MESSAGE,
+                throw new ConflictException(String.format(ErrorMessage.EMAIL_ALREADY_EXIST_MESSAGE,
                         registerRequest.getEmail()));
             }else{
                 user.setFirstName(registerRequest.getFirstName());
@@ -128,7 +130,9 @@ public class UserService {
         basketRepository.save(basket);
         user.setBasket(basket);
         user.setStatus(UserStatus.ACTIVATED);
+        userRepository.save(user);
     }
+
 
     public LoginResponse loginUser(String basketUUID,LoginRequest loginRequest) {
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
@@ -178,8 +182,6 @@ public class UserService {
         }
         basketRepository.save(userBasket);
         basketRepository.delete(anonymousBasket);
-
-
 
 
         if (user.getStatus().equals(UserStatus.PENDING)){

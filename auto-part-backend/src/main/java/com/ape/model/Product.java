@@ -1,7 +1,7 @@
 package com.ape.model;
 
 import com.ape.model.enums.ProductStatus;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,9 +25,6 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-    @Column(length = 100, nullable = false)
-    private String sku;
 
     @Column(length = 150, nullable = false)
     private String title;
@@ -55,21 +52,10 @@ public class Product {
     @Column
     private Integer stockAmount;
 
-    @Column
-    private Integer stockAlarmLimit;
-
-    @Column(length = 100, nullable = false)
-    private String slug;
-
-    @Column(nullable = false)
-    private Boolean featured;
-
-    @Column
-    private Boolean newProduct;
-
     @Enumerated(EnumType.STRING)
     @Column
     private ProductStatus status;
+
     @Column
     private Double width;
 
@@ -78,9 +64,6 @@ public class Product {
 
     @Column
     private Double height;
-
-    @Column
-    private Boolean builtIn = false;
 
     @Column
     private LocalDateTime createAt = LocalDateTime.now();

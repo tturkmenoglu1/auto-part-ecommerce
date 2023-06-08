@@ -2,7 +2,7 @@ package com.ape.model;
 
 import com.ape.model.enums.UserStatus;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -50,8 +50,8 @@ public class User {
     @Column(length = 120, nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private Boolean builtIn = false;
+    @Column
+    private Boolean locked = false;
 
     @Column
     private LocalDateTime createAt = LocalDateTime.now();

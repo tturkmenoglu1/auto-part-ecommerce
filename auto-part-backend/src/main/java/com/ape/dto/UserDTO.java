@@ -35,6 +35,8 @@ public class UserDTO {
 
     private String password;
 
+    private Boolean locked;
+
     private Boolean builtIn;
 
     private LocalDateTime createAt;

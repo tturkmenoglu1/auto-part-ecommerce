@@ -1,4 +1,4 @@
-package com.ape.utility;
+package com.ape.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,11 +7,14 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class LoginResponse {
+@NoArgsConstructor
 
-    private String token;
+public class ImageFileDTO {
 
-    private String basketUUID;
+    private String name;
+
+    private String url;
+
+    private String type;
 }

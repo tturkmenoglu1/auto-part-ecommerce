@@ -1,7 +1,7 @@
 package com.ape.model;
 
 import com.ape.model.enums.BrandStatus;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,9 +29,6 @@ public class Brand {
     @Enumerated(EnumType.STRING)
     @Column
     private BrandStatus status;
-
-    @Column
-    private Boolean builtIn = false;
 
     @Column(nullable = false)
     private LocalDateTime createAt = LocalDateTime.now();

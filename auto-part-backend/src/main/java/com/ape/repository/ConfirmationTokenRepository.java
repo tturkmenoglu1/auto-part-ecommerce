@@ -1,7 +1,7 @@
 package com.ape.repository;
 
 import com.ape.model.ConfirmationToken;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
