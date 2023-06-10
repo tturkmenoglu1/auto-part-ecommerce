@@ -54,6 +54,9 @@ public class User {
     private Boolean locked = false;
 
     @Column
+    private Integer loginTry = 5;
+
+    @Column
     private LocalDateTime createAt = LocalDateTime.now();
 
     @Column

@@ -74,4 +74,13 @@ public class ProductService {
         product.setDiscountedPrice(product.getPrice()*(100-product.getDiscount())/100);
         productRepository.save(product);
     }
+
+    public Product findProductById(Long productId) {
+        return productRepository.findProductById(productId).orElseThrow(()->
+                new ResourceNotFoundException(String.format(ErrorMessage.RESOURCE_NOT_FOUND_MESSAGE,productId)));
+    }
+
+    public void save(Product product) {
+        productRepository.save(product);
+    }
 }

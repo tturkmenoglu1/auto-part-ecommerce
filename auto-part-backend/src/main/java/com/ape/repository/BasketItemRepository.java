@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BasketItemRepository extends JpaRepository<BasketItem,Long> {
 
+    BasketItem findByProductIdAndBasketBasketUUID(Long id, String uuid);
 }

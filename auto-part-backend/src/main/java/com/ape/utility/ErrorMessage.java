@@ -39,4 +39,6 @@ public class ErrorMessage {
     public final static String ORDER_CAN_NOT_BE_UPDATED_MESSAGE = "Order can not be updated while status \"%s\"";
     public final static String ORDER_CAN_BE_UPDATED_ONLY_ONCE_MESSAGE = "You can only update an order once.";
 
+    public final static String CREDIT_CARD_ALREADY_ADDED = "The Credit Card already added";
+
 }

@@ -65,7 +65,7 @@ public class Order {
 
     @OneToMany(orphanRemoval = true,fetch = FetchType.EAGER)
     @JoinColumn(name = "order_id")
-    private List<OrderItem> orderItems = new ArrayList<>();
+    private List<OrderItem> orderItem = new ArrayList<>();
 
     @OneToMany(orphanRemoval = true)
     @JoinColumn(name = "order_id")
@@ -80,10 +80,7 @@ public class Order {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "invoice_address_id")
-    private UserAddress invoiceAddress;
+    @JoinColumn(name = "address_id")
+    private UserAddress address;
 
-    @ManyToOne
-    @JoinColumn(name = "shipping_address_id")
-    private UserAddress shippingAddress;
 }

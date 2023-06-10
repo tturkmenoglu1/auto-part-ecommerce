@@ -8,11 +8,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class APEResponse {
 
     private String message;
 
     private Boolean success;
+
+    private Object data;
 
 
     public APEResponse(String message, Boolean success) {

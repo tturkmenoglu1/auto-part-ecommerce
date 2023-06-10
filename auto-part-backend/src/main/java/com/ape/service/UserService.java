@@ -13,6 +13,7 @@ import com.ape.model.enums.UserStatus;
 import com.ape.repository.BasketItemRepository;
 import com.ape.repository.BasketRepository;
 import com.ape.repository.UserRepository;
+import com.ape.security.SecurityUtils;
 import com.ape.security.jwt.JwtUtils;
 import com.ape.service.email.EmailSender;
 import com.ape.service.email.EmailService;
@@ -64,6 +65,12 @@ public class UserService {
 
     @Value("${autopart.app.backendLink}")
     private String backendLink;
+
+    public User getCurrentUser() {
+        String email = SecurityUtils.getCurrentUserLogin().orElseThrow(()->
+                new ResourceNotFoundException(ErrorMessage.PRINCIPAL_FOUND_MESSAGE));
+        return getUserByEmail(email);
+    }
 
     public void saveUser(RegisterRequest registerRequest) {
         Role role = roleService.findByRoleName(RoleType.ROLE_USER);
@@ -190,5 +197,9 @@ public class UserService {
         String jwtToken = jwtUtils.generateJwtToken(userDetails);
         String userBasketUUID = user.getBasket().getBasketUUID();
         return new LoginResponse(jwtToken,userBasketUUID);
+    }
+
+    public void save(User user) {
+        userRepository.save(user);
     }
 }

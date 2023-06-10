@@ -13,4 +13,6 @@ public interface BrandRepository extends JpaRepository<Brand,Long> {
 
     @Query("SELECT count(b) FROM Brand b JOIN b.image img WHERE img.id=:id")
     Integer findBrandsByImageId(@Param("id") String imageId);
+
+    boolean existsByImageId(String image);
 }

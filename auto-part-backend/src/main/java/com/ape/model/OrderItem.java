@@ -21,9 +21,6 @@ public class OrderItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 100,nullable = false)
-    private String sku;
-
     @Column(nullable=false)
     private Integer quantity;
 
@@ -39,10 +36,8 @@ public class OrderItem {
     @Column
     private Double subTotal;
 
-
     @Column
     private LocalDateTime createAt=LocalDateTime.now();
-
 
     @Column
     private LocalDateTime updateAt;

@@ -57,6 +57,8 @@ public class ResponseMessage {
     public final static  String DATABASE_RESET_RESPONSE="The database has been successfully reset.";
     public final static  String COUNT_OF_ALL_RECORDS_RESPONSE="All records count successfully retrieved.";
 
+    public final static String CREDIT_CARD_SAVED_MESSAGE = "Credit Card successfully saved";
+
 
 
     public final static String USER_ADDRESS_CREATED_RESPONSE_MESSAGE= "Address successfully created";

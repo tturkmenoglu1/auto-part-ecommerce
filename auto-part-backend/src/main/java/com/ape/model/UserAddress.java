@@ -49,10 +49,7 @@ public class UserAddress {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "invoiceAddress")
-    private List<Order> ordersInvoice = new ArrayList<>();
-
-    @OneToMany(mappedBy = "shippingAddress")
-    private List<Order> ordersShipping = new ArrayList<>();
+    @OneToMany(mappedBy = "address")
+    private List<Order> orderAddress = new ArrayList<>();
 
 }
