@@ -40,5 +40,7 @@ public class ErrorMessage {
     public final static String ORDER_CAN_BE_UPDATED_ONLY_ONCE_MESSAGE = "You can only update an order once.";
 
     public final static String CREDIT_CARD_ALREADY_ADDED = "The Credit Card already added";
+    public final static String CREDIT_CARD_NOT_EXIST = "The Credit Card does not exist";
+
 
 }

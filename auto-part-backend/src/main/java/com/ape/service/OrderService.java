@@ -70,6 +70,11 @@ public class OrderService {
         return orderRepository.existsByAddress(userAddress);
     }
 
+    public Order findOrderById(Long id){
+        return orderRepository.findById(id).orElseThrow(()->
+                new ResourceNotFoundException(String.format(ErrorMessage.PRODUCT_NOT_FOUND_MESSAGE,id)));
+    }
+
     public OrderDTO createOrder(String basketUUID, OrderRequest orderRequest) {
         Basket basket = basketService.findBasketByUUID(basketUUID);
         List<BasketItem> basketItemList = basket.getBasketItem();
@@ -161,4 +166,38 @@ public class OrderService {
         return orderMapper.orderToOrderDTO(order);
     }
 
+    public OrderDTO getOrderById(Long id) {
+        Order order = findOrderById(id);
+        return orderMapper.orderToOrderDTO(order);
+    }
+
+    public OrderDTO updateOrderStatus(Long orderId, OrderStatus status) {
+        Order order = findOrderById(orderId);
+        order.setStatus(status);
+        Transaction transaction = new Transaction();
+        User user = order.getUser();
+        if (status.equals(OrderStatus.BEING_SUPPLIED) || status.equals(OrderStatus.READY_TO_SHIP)){
+            transaction.setTransaction(TransactionStatus.UPDATED);
+        }else if(status.equals(OrderStatus.DELIVERY_DONE)){
+            transaction.setTransaction(TransactionStatus.COMPLETED);
+        }else if (status.equals(OrderStatus.RETURNED) || status.equals(OrderStatus.CANCELED)) {
+            transaction.setTransaction(TransactionStatus.CANCELED);
+            Payment payment = new Payment();
+            payment.setStatus(PaymentStatus.REFUNDED);
+            payment.setAmount(order.getGrandTotal());
+            payment.setProvider(order.getPayments().get(order.getPayments().size()-1).getProvider());
+            for (OrderItem each:order.getOrderItem()) {
+                each.getProduct().setStockAmount(each.getProduct().getStockAmount()+ each.getQuantity());
+            }
+            paymentService.save(payment);
+            orderRepository.save(order);
+        }
+
+        transactionService.save(transaction);
+        user.getTransactions().add(transaction);
+        order.getTransaction().add(transaction);
+        orderRepository.save(order);
+
+        return orderMapper.orderToOrderDTO(order);
+    }
 }

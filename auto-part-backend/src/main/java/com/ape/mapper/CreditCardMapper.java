@@ -10,4 +10,7 @@ import java.util.List;
 public interface CreditCardMapper {
 
     List<CreditCardDTO> creditCardListToCreditCardDTOList(List<CreditCard> creditCards);
+
+
+    CreditCardDTO creditCardToCreditCardDTO(CreditCard card);
 }
