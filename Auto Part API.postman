@@ -1,0 +1,3596 @@
+{
+	"info": {
+		"_postman_id": "396f203f-a662-4580-9780-88df7c48781d",
+		"name": "Auto Part API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23411280"
+	},
+	"item": [
+		{
+			"name": "user-address-controller",
+			"item": [
+				{
+					"name": "get Address By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user-address/1/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user-address",
+								"1",
+								"auth"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/user-address/:id/auth",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user-address",
+										":id",
+										"auth"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": \"<string>\",\n  \"province\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country\": \"<string>\",\n  \"createAt\": \"<dateTime>\",\n  \"updateAt\": \"<dateTime>\",\n  \"userId\": \"<long>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "auth Update Address",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"address\": \"kargareteli street 7\",\n  \"city\": \"Tbilisi\",\n  \"country\": \"Georgia\",\n  \"email\": \"tturkmenoglu1@gmail.com\",\n  \"firstName\": \"Taha\",\n  \"lastName\": \"Turkmenoglu\",\n  \"phone\": \"595-555-5959\",\n  \"province\": \"Tbilisi\",\n  \"title\": \"Work\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user-address/1/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user-address",
+								"1",
+								"auth"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phone\": \"152553.1420\",\n  \"province\": \"<string>\",\n  \"title\": \"<string>\",\n  \"updateAt\": \"<dateTime>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user-address/:id/auth",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user-address",
+										":id",
+										"auth"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": \"<string>\",\n  \"province\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country\": \"<string>\",\n  \"createAt\": \"<dateTime>\",\n  \"updateAt\": \"<dateTime>\",\n  \"userId\": \"<long>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete Auth User Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user-address/1/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user-address",
+								"1",
+								"auth"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/user-address/:id/auth",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user-address",
+										":id",
+										"auth"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "get All Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user-address/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user-address",
+								"auth"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/user-address/auth",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user-address",
+										"auth"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": \"<string>\",\n    \"province\": \"<string>\",\n    \"city\": \"<string>\",\n    \"country\": \"<string>\",\n    \"createAt\": \"<dateTime>\",\n    \"updateAt\": \"<dateTime>\",\n    \"userId\": \"<long>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": \"<string>\",\n    \"province\": \"<string>\",\n    \"city\": \"<string>\",\n    \"country\": \"<string>\",\n    \"createAt\": \"<dateTime>\",\n    \"updateAt\": \"<dateTime>\",\n    \"userId\": \"<long>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "save User Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"address\": \"kargareteli street\",\n  \"city\": \"tbilisi\",\n  \"country\": \"georgia\",\n  \"email\": \"tturkmenoglu1@gmail.com\",\n  \"firstName\": \"Taha\",\n  \"lastName\": \"Turkmenoglu\",\n  \"phone\": \"595-555-5959\",\n  \"province\": \"tbilisi\",\n  \"title\": \"home\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user-address/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user-address",
+								"auth"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phone\": \"(204)9523699\",\n  \"province\": \"<string>\",\n  \"title\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user-address/auth",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user-address",
+										"auth"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "product-controller",
+			"item": [
+				{
+					"name": "update Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"longDesc\": \"uuweqoplkmaisdoasd\",\n  \"shortDesc\": \"sgsgsfsdfsdsdf\",\n  \"title\": \"deneme2\",\n  \"price\": \"600\",\n  \"tax\": \"18\",\n  \"discount\": \"20\",\n  \"stockAmount\": \"10\",\n  \"status\": \"PUBLISHED\",\n  \"width\": \"25\",\n  \"length\": \"25\",\n  \"height\": \"55\",\n  \"brandId\": \"1\",\n  \"categoryId\": \"1\",\n  \"imageId\": [\n    \"5cd0c3ac-9373-4dd2-9ac8-68f8d41c1c0c\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/1/admin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"1",
+								"admin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"discount\": \"<integer>\",\n  \"longDesc\": \"<string>\",\n  \"shortDesc\": \"<string>\",\n  \"title\": \"<string>\",\n  \"price\": \"<double>\",\n  \"tax\": \"<double>\",\n  \"stockAmount\": \"<integer>\",\n  \"imageId\": [\n    \"<string>\"\n  ],\n  \"status\": \"PUBLISHED\",\n  \"width\": \"<double>\",\n  \"length\": \"<double>\",\n  \"height\": \"<double>\",\n  \"categoryId\": \"<long>\",\n  \"brandId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products/:id/admin",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":id",
+										"admin"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "delete Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/products/1/admin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"1",
+								"admin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/:id/admin",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":id",
+										"admin"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "save Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"longDesc\": \"sdgfjfkdlsfssghsgfdsfsdf\",\n  \"shortDesc\": \"sgsgsfsdfsd\",\n  \"title\": \"deneme1\",\n  \"price\": \"500\",\n  \"tax\": \"18\",\n  \"discount\": \"10\",\n  \"stockAmount\": \"20\",\n  \"status\": \"PUBLISHED\",\n  \"width\": \"45\",\n  \"length\": \"35\",\n  \"height\": \"55\",\n  \"brandId\": \"1\",\n  \"categoryId\": \"1\",\n  \"imageId\": [\n    \"5cd0c3ac-9373-4dd2-9ac8-68f8d41c1c0c\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/admin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"admin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"longDesc\": \"<string>\",\n  \"shortDesc\": \"<string>\",\n  \"title\": \"<string>\",\n  \"price\": \"<double>\",\n  \"tax\": \"<double>\",\n  \"discount\": \"<integer>\",\n  \"stockAmount\": \"<integer>\",\n  \"status\": \"PUBLISHED\",\n  \"width\": \"<double>\",\n  \"length\": \"<double>\",\n  \"height\": \"<double>\",\n  \"brandId\": \"<long>\",\n  \"categoryId\": \"<long>\",\n  \"imageId\": [\n    \"<string>\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products/admin",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"admin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "get Product With Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/products/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"shortDesc\": \"<string>\",\n  \"longDesc\": \"<string>\",\n  \"price\": \"<double>\",\n  \"discountedPrice\": \"<double>\",\n  \"tax\": \"<double>\",\n  \"discount\": \"<integer>\",\n  \"stockAmount\": \"<integer>\",\n  \"status\": \"PUBLISHED\",\n  \"width\": \"<double>\",\n  \"length\": \"<double>\",\n  \"height\": \"<double>\",\n  \"createAt\": \"<dateTime>\",\n  \"updateAt\": \"<dateTime>\",\n  \"brand\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"status\": \"NOT_PUBLISHED\",\n    \"createAt\": \"<dateTime>\",\n    \"updateAt\": \"<dateTime>\",\n    \"product\": [\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"shortDesc\": \"<string>\",\n        \"longDesc\": \"<string>\",\n        \"price\": \"<double>\",\n        \"discountedPrice\": \"<double>\",\n        \"tax\": \"<double>\",\n        \"discount\": \"<integer>\",\n        \"stockAmount\": \"<integer>\",\n        \"status\": \"NOT_PUBLISHED\",\n        \"width\": \"<double>\",\n        \"length\": \"<double>\",\n        \"height\": \"<double>\",\n        \"createAt\": \"<dateTime>\",\n        \"updateAt\": \"<dateTime>\",\n        \"brand\": {\n          \"value\": \"<Circular reference to #/components/schemas/Brand detected>\"\n        },\n        \"category\": {\n          \"id\": \"<long>\",\n          \"title\": \"<string>\",\n          \"status\": \"PUBLISHED\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\"\n        },\n        \"basketItem\": [\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"totalPrice\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            },\n            \"basket\": {\n              \"id\": \"<long>\",\n              \"basketUUID\": \"<string>\",\n              \"grandTotal\": \"<double>\",\n              \"createAt\": \"<dateTime>\",\n              \"basketItem\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n                }\n              ]\n            }\n          }\n        ],\n        \"orderItems\": [\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"unitPrice\": \"<double>\",\n            \"tax\": \"<double>\",\n            \"discount\": \"<integer>\",\n            \"subTotal\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            }\n          }\n        ],\n        \"image\": [\n          {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"showcase\": \"<boolean>\"\n          }\n        ]\n      },\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"shortDesc\": \"<string>\",\n        \"longDesc\": \"<string>\",\n        \"price\": \"<double>\",\n        \"discountedPrice\": \"<double>\",\n        \"tax\": \"<double>\",\n        \"discount\": \"<integer>\",\n        \"stockAmount\": \"<integer>\",\n        \"status\": \"PUBLISHED\",\n        \"width\": \"<double>\",\n        \"length\": \"<double>\",\n        \"height\": \"<double>\",\n        \"createAt\": \"<dateTime>\",\n        \"updateAt\": \"<dateTime>\",\n        \"brand\": {\n          \"value\": \"<Circular reference to #/components/schemas/Brand detected>\"\n        },\n        \"category\": {\n          \"id\": \"<long>\",\n          \"title\": \"<string>\",\n          \"status\": \"PUBLISHED\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\"\n        },\n        \"basketItem\": [\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"totalPrice\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            },\n            \"basket\": {\n              \"id\": \"<long>\",\n              \"basketUUID\": \"<string>\",\n              \"grandTotal\": \"<double>\",\n              \"createAt\": \"<dateTime>\",\n              \"basketItem\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n                }\n              ]\n            }\n          }\n        ],\n        \"orderItems\": [\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"unitPrice\": \"<double>\",\n            \"tax\": \"<double>\",\n            \"discount\": \"<integer>\",\n            \"subTotal\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            }\n          }\n        ],\n        \"image\": [\n          {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"showcase\": \"<boolean>\"\n          }\n        ]\n      }\n    ],\n    \"image\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"showcase\": \"<boolean>\"\n    }\n  },\n  \"category\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"status\": \"NOT_PUBLISHED\",\n    \"createAt\": \"<dateTime>\",\n    \"updateAt\": \"<dateTime>\"\n  },\n  \"basketItem\": [\n    {\n      \"id\": \"<long>\",\n      \"quantity\": \"<integer>\",\n      \"totalPrice\": \"<double>\",\n      \"createAt\": \"<dateTime>\",\n      \"updateAt\": \"<dateTime>\",\n      \"product\": {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      },\n      \"basket\": {\n        \"id\": \"<long>\",\n        \"basketUUID\": \"<string>\",\n        \"grandTotal\": \"<double>\",\n        \"createAt\": \"<dateTime>\",\n        \"basketItem\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n          }\n        ]\n      }\n    }\n  ],\n  \"orderItems\": [\n    {\n      \"id\": \"<long>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<double>\",\n      \"tax\": \"<double>\",\n      \"discount\": \"<integer>\",\n      \"subTotal\": \"<double>\",\n      \"createAt\": \"<dateTime>\",\n      \"updateAt\": \"<dateTime>\",\n      \"product\": {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      }\n    }\n  ],\n  \"image\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"showcase\": \"<boolean>\"\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "delete Product Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/products/image/5cd0c3ac-9373-4dd2-9ac8-68f8d41c1c0c",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"image",
+								"5cd0c3ac-9373-4dd2-9ac8-68f8d41c1c0c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/image/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"image",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "order-controller",
+			"item": [
+				{
+					"name": "update Order Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/order/auth/:id?status=RETURNED",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order",
+								"auth",
+								":id"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "RETURNED",
+									"description": "(Required) "
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<long>"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/order/auth/:id?status=RETURNED",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"order",
+										"auth",
+										":id"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "RETURNED",
+											"description": "(Required) "
+										}
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "create Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) ",
+								"key": "basketUUID",
+								"value": "<string>"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"addressId\": \"1\",\n  \"contactName\": \"Taha Turkmenoglu\",\n  \"phoneNumber\": \"595-966-5753\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/order/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order",
+								"auth"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) ",
+										"key": "basketUUID",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"addressId\": \"<long>\",\n  \"contactName\": \"<string>\",\n  \"phoneNumber\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/order/auth",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"order",
+										"auth"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "get Order By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/order/2/admin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order",
+								"2",
+								"admin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/order/:id/admin",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"order",
+										":id",
+										"admin"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"code\": \"<string>\",\n  \"status\": \"CANCELED\",\n  \"subTotal\": \"<double>\",\n  \"discount\": \"<double>\",\n  \"tax\": \"<double>\",\n  \"contactName\": \"<string>\",\n  \"contactPhone\": \"<string>\",\n  \"shippingCost\": \"<double>\",\n  \"shippingDetails\": \"<string>\",\n  \"grandTotal\": \"<double>\",\n  \"createAt\": \"<dateTime>\",\n  \"updateAt\": \"<dateTime>\",\n  \"orderItemsDTO\": [\n    {\n      \"productId\": \"<long>\",\n      \"imageId\": \"<string>\",\n      \"title\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<double>\",\n      \"tax\": \"<double>\",\n      \"discount\": \"<double>\",\n      \"subTotal\": \"<double>\"\n    },\n    {\n      \"productId\": \"<long>\",\n      \"imageId\": \"<string>\",\n      \"title\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<double>\",\n      \"tax\": \"<double>\",\n      \"discount\": \"<double>\",\n      \"subTotal\": \"<double>\"\n    }\n  ],\n  \"customer\": \"<string>\",\n  \"addressDTO\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": \"<string>\",\n    \"province\": \"<string>\",\n    \"city\": \"<string>\",\n    \"country\": \"<string>\",\n    \"createAt\": \"<dateTime>\",\n    \"updateAt\": \"<dateTime>\",\n    \"userId\": \"<long>\"\n  }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "category-controller",
+			"item": [
+				{
+					"name": "get Category By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/category/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/category/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"category",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"status\": \"PUBLISHED\",\n  \"createAt\": \"<dateTime>\",\n  \"updateAt\": \"<dateTime>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"deneme2\",\n  \"status\": \"PUBLISHED\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/category/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\",\n  \"status\": \"PUBLISHED\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/category/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"category",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "delete Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/category/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/category/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"category",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "save Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"deneme1\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/category",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/category",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "get All Brands For Option",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/category/option",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								"option"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/category/option",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"category",
+										"option"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"status\": \"NOT_PUBLISHED\",\n    \"createAt\": \"<dateTime>\",\n    \"updateAt\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"status\": \"PUBLISHED\",\n    \"createAt\": \"<dateTime>\",\n    \"updateAt\": \"<dateTime>\"\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "credit-card-controller",
+			"item": [
+				{
+					"name": "update Card By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"expireDate\": \"2025-02-23\",\n  \"nameOnCard\": \"Taha Aasdasfsafa\",\n  \"cardNumber\": \"5555555555555555\",\n  \"securityCode\": \"566\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/card/update/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"expireDate\": \"<date>\",\n  \"nameOnCard\": \"<string>\",\n  \"cardNumber\": \"<string>\",\n  \"securityCode\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/card/update/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"card",
+										"update",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "add new Credit Card",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"expireDate\": \"2024-01-01\",\n  \"nameOnCard\": \"Taha Turkmenoglu\",\n  \"cardNumber\": \"4444444444444444\",\n  \"securityCode\": \"852\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/card/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"expireDate\": \"<date>\",\n  \"nameOnCard\": \"<string>\",\n  \"cardNumber\": \"<string>\",\n  \"securityCode\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/card/add",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"card",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "get Card By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/card/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/card/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"card",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nameOnCard\": \"<string>\",\n  \"cardNumber\": \"<string>\",\n  \"expireDate\": \"<date>\",\n  \"securityCode\": \"<string>\",\n  \"user\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"birthDate\": \"<date>\",\n    \"email\": \"<string>\",\n    \"status\": \"PENDING\",\n    \"password\": \"<string>\",\n    \"locked\": \"<boolean>\",\n    \"loginTry\": \"<integer>\",\n    \"createAt\": \"<dateTime>\",\n    \"updateAt\": \"<dateTime>\",\n    \"roles\": [\n      {\n        \"id\": \"<integer>\",\n        \"roleName\": \"ROLE_USER\"\n      },\n      {\n        \"id\": \"<integer>\",\n        \"roleName\": \"ROLE_ADMIN\"\n      }\n    ],\n    \"transactions\": [\n      {\n        \"id\": \"<long>\",\n        \"transaction\": \"CANCELED\",\n        \"createAt\": \"<dateTime>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"transaction\": \"UPDATED\",\n        \"createAt\": \"<dateTime>\"\n      }\n    ],\n    \"orders\": [\n      {\n        \"id\": \"<long>\",\n        \"code\": \"<string>\",\n        \"status\": \"READY_TO_SHIP\",\n        \"subTotal\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"tax\": \"<double>\",\n        \"contactName\": \"<string>\",\n        \"contactPhone\": \"<string>\",\n        \"shippingCost\": \"<double>\",\n        \"shippingDetails\": \"<string>\",\n        \"grandTotal\": \"<double>\",\n        \"createAt\": \"<dateTime>\",\n        \"updateAt\": \"<dateTime>\",\n        \"orderItem\": [\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"unitPrice\": \"<double>\",\n            \"tax\": \"<double>\",\n            \"discount\": \"<integer>\",\n            \"subTotal\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            }\n          },\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"unitPrice\": \"<double>\",\n            \"tax\": \"<double>\",\n            \"discount\": \"<integer>\",\n            \"subTotal\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            }\n          }\n        ],\n        \"transaction\": [\n          {\n            \"id\": \"<long>\",\n            \"transaction\": \"COMPLETED\",\n            \"createAt\": \"<dateTime>\"\n          },\n          {\n            \"id\": \"<long>\",\n            \"transaction\": \"CREATED\",\n            \"createAt\": \"<dateTime>\"\n          }\n        ],\n        \"payments\": [\n          {\n            \"id\": \"<long>\",\n            \"amount\": \"<double>\",\n            \"provider\": \"<string>\",\n            \"status\": \"CREATED\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\"\n          },\n          {\n            \"id\": \"<long>\",\n            \"amount\": \"<double>\",\n            \"provider\": \"<string>\",\n            \"status\": \"COMPLETED\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\"\n          }\n        ],\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        },\n        \"address\": {\n          \"id\": \"<long>\",\n          \"title\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phone\": \"<string>\",\n          \"email\": \"<string>\",\n          \"address\": \"<string>\",\n          \"province\": \"<string>\",\n          \"city\": \"<string>\",\n          \"country\": \"<string>\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"orderAddress\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"<long>\",\n        \"code\": \"<string>\",\n        \"status\": \"CANCELED\",\n        \"subTotal\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"tax\": \"<double>\",\n        \"contactName\": \"<string>\",\n        \"contactPhone\": \"<string>\",\n        \"shippingCost\": \"<double>\",\n        \"shippingDetails\": \"<string>\",\n        \"grandTotal\": \"<double>\",\n        \"createAt\": \"<dateTime>\",\n        \"updateAt\": \"<dateTime>\",\n        \"orderItem\": [\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"unitPrice\": \"<double>\",\n            \"tax\": \"<double>\",\n            \"discount\": \"<integer>\",\n            \"subTotal\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            }\n          },\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"unitPrice\": \"<double>\",\n            \"tax\": \"<double>\",\n            \"discount\": \"<integer>\",\n            \"subTotal\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            }\n          }\n        ],\n        \"transaction\": [\n          {\n            \"id\": \"<long>\",\n            \"transaction\": \"COMPLETED\",\n            \"createAt\": \"<dateTime>\"\n          },\n          {\n            \"id\": \"<long>\",\n            \"transaction\": \"CREATED\",\n            \"createAt\": \"<dateTime>\"\n          }\n        ],\n        \"payments\": [\n          {\n            \"id\": \"<long>\",\n            \"amount\": \"<double>\",\n            \"provider\": \"<string>\",\n            \"status\": \"REFUNDED\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\"\n          },\n          {\n            \"id\": \"<long>\",\n            \"amount\": \"<double>\",\n            \"provider\": \"<string>\",\n            \"status\": \"REFUNDED\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\"\n          }\n        ],\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        },\n        \"address\": {\n          \"id\": \"<long>\",\n          \"title\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"phone\": \"<string>\",\n          \"email\": \"<string>\",\n          \"address\": \"<string>\",\n          \"province\": \"<string>\",\n          \"city\": \"<string>\",\n          \"country\": \"<string>\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"orderAddress\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"confirmationTokens\": [\n      {\n        \"id\": \"<long>\",\n        \"token\": \"<string>\",\n        \"createdAt\": \"<dateTime>\",\n        \"expiresAt\": \"<dateTime>\",\n        \"confirmedAt\": \"<dateTime>\",\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        }\n      }\n    ],\n    \"basket\": {\n      \"id\": \"<long>\",\n      \"basketUUID\": \"<string>\",\n      \"grandTotal\": \"<double>\",\n      \"createAt\": \"<dateTime>\",\n      \"basketItem\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n        }\n      ]\n    }\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete Card By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/card/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/card/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"card",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "get All Cards",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/card/option",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								"option"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/card/option",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"card",
+										"option"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"nameOnCard\": \"<string>\",\n    \"cardNumber\": \"<string>\",\n    \"expireDate\": \"<date>\",\n    \"securityCode\": \"<string>\",\n    \"user\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"birthDate\": \"<date>\",\n      \"email\": \"<string>\",\n      \"status\": \"ACTIVATED\",\n      \"password\": \"<string>\",\n      \"locked\": \"<boolean>\",\n      \"loginTry\": \"<integer>\",\n      \"createAt\": \"<dateTime>\",\n      \"updateAt\": \"<dateTime>\",\n      \"roles\": [\n        {\n          \"id\": \"<integer>\",\n          \"roleName\": \"ROLE_USER\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"roleName\": \"ROLE_ADMIN\"\n        }\n      ],\n      \"transactions\": [\n        {\n          \"id\": \"<long>\",\n          \"transaction\": \"CANCELED\",\n          \"createAt\": \"<dateTime>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"transaction\": \"UPDATED\",\n          \"createAt\": \"<dateTime>\"\n        }\n      ],\n      \"orders\": [\n        {\n          \"id\": \"<long>\",\n          \"code\": \"<string>\",\n          \"status\": \"READY_TO_SHIP\",\n          \"subTotal\": \"<double>\",\n          \"discount\": \"<double>\",\n          \"tax\": \"<double>\",\n          \"contactName\": \"<string>\",\n          \"contactPhone\": \"<string>\",\n          \"shippingCost\": \"<double>\",\n          \"shippingDetails\": \"<string>\",\n          \"grandTotal\": \"<double>\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\",\n          \"orderItem\": [\n            {\n              \"id\": \"<long>\",\n              \"quantity\": \"<integer>\",\n              \"unitPrice\": \"<double>\",\n              \"tax\": \"<double>\",\n              \"discount\": \"<integer>\",\n              \"subTotal\": \"<double>\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\",\n              \"product\": {\n                \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n              }\n            },\n            {\n              \"id\": \"<long>\",\n              \"quantity\": \"<integer>\",\n              \"unitPrice\": \"<double>\",\n              \"tax\": \"<double>\",\n              \"discount\": \"<integer>\",\n              \"subTotal\": \"<double>\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\",\n              \"product\": {\n                \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n              }\n            }\n          ],\n          \"transaction\": [\n            {\n              \"id\": \"<long>\",\n              \"transaction\": \"CANCELED\",\n              \"createAt\": \"<dateTime>\"\n            },\n            {\n              \"id\": \"<long>\",\n              \"transaction\": \"UPDATED\",\n              \"createAt\": \"<dateTime>\"\n            }\n          ],\n          \"payments\": [\n            {\n              \"id\": \"<long>\",\n              \"amount\": \"<double>\",\n              \"provider\": \"<string>\",\n              \"status\": \"FAILED\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\"\n            },\n            {\n              \"id\": \"<long>\",\n              \"amount\": \"<double>\",\n              \"provider\": \"<string>\",\n              \"status\": \"CREATED\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\"\n            }\n          ],\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"address\": {\n            \"id\": \"<long>\",\n            \"title\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"phone\": \"<string>\",\n            \"email\": \"<string>\",\n            \"address\": \"<string>\",\n            \"province\": \"<string>\",\n            \"city\": \"<string>\",\n            \"country\": \"<string>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            },\n            \"orderAddress\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n              }\n            ]\n          }\n        },\n        {\n          \"id\": \"<long>\",\n          \"code\": \"<string>\",\n          \"status\": \"READY_TO_SHIP\",\n          \"subTotal\": \"<double>\",\n          \"discount\": \"<double>\",\n          \"tax\": \"<double>\",\n          \"contactName\": \"<string>\",\n          \"contactPhone\": \"<string>\",\n          \"shippingCost\": \"<double>\",\n          \"shippingDetails\": \"<string>\",\n          \"grandTotal\": \"<double>\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\",\n          \"orderItem\": [\n            {\n              \"id\": \"<long>\",\n              \"quantity\": \"<integer>\",\n              \"unitPrice\": \"<double>\",\n              \"tax\": \"<double>\",\n              \"discount\": \"<integer>\",\n              \"subTotal\": \"<double>\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\",\n              \"product\": {\n                \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n              }\n            },\n            {\n              \"id\": \"<long>\",\n              \"quantity\": \"<integer>\",\n              \"unitPrice\": \"<double>\",\n              \"tax\": \"<double>\",\n              \"discount\": \"<integer>\",\n              \"subTotal\": \"<double>\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\",\n              \"product\": {\n                \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n              }\n            }\n          ],\n          \"transaction\": [\n            {\n              \"id\": \"<long>\",\n              \"transaction\": \"COMPLETED\",\n              \"createAt\": \"<dateTime>\"\n            },\n            {\n              \"id\": \"<long>\",\n              \"transaction\": \"UPDATED\",\n              \"createAt\": \"<dateTime>\"\n            }\n          ],\n          \"payments\": [\n            {\n              \"id\": \"<long>\",\n              \"amount\": \"<double>\",\n              \"provider\": \"<string>\",\n              \"status\": \"REFUNDED\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\"\n            },\n            {\n              \"id\": \"<long>\",\n              \"amount\": \"<double>\",\n              \"provider\": \"<string>\",\n              \"status\": \"CREATED\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\"\n            }\n          ],\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"address\": {\n            \"id\": \"<long>\",\n            \"title\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"phone\": \"<string>\",\n            \"email\": \"<string>\",\n            \"address\": \"<string>\",\n            \"province\": \"<string>\",\n            \"city\": \"<string>\",\n            \"country\": \"<string>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            },\n            \"orderAddress\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n              }\n            ]\n          }\n        }\n      ],\n      \"confirmationTokens\": [\n        {\n          \"id\": \"<long>\",\n          \"token\": \"<string>\",\n          \"createdAt\": \"<dateTime>\",\n          \"expiresAt\": \"<dateTime>\",\n          \"confirmedAt\": \"<dateTime>\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          }\n        }\n      ],\n      \"basket\": {\n        \"id\": \"<long>\",\n        \"basketUUID\": \"<string>\",\n        \"grandTotal\": \"<double>\",\n        \"createAt\": \"<dateTime>\",\n        \"basketItem\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n          }\n        ]\n      }\n    }\n  },\n  {\n    \"id\": \"<long>\",\n    \"nameOnCard\": \"<string>\",\n    \"cardNumber\": \"<string>\",\n    \"expireDate\": \"<date>\",\n    \"securityCode\": \"<string>\",\n    \"user\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"birthDate\": \"<date>\",\n      \"email\": \"<string>\",\n      \"status\": \"ANONYMOUS\",\n      \"password\": \"<string>\",\n      \"locked\": \"<boolean>\",\n      \"loginTry\": \"<integer>\",\n      \"createAt\": \"<dateTime>\",\n      \"updateAt\": \"<dateTime>\",\n      \"roles\": [\n        {\n          \"id\": \"<integer>\",\n          \"roleName\": \"ROLE_USER\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"roleName\": \"ROLE_ADMIN\"\n        }\n      ],\n      \"transactions\": [\n        {\n          \"id\": \"<long>\",\n          \"transaction\": \"CANCELED\",\n          \"createAt\": \"<dateTime>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"transaction\": \"COMPLETED\",\n          \"createAt\": \"<dateTime>\"\n        }\n      ],\n      \"orders\": [\n        {\n          \"id\": \"<long>\",\n          \"code\": \"<string>\",\n          \"status\": \"PENDING\",\n          \"subTotal\": \"<double>\",\n          \"discount\": \"<double>\",\n          \"tax\": \"<double>\",\n          \"contactName\": \"<string>\",\n          \"contactPhone\": \"<string>\",\n          \"shippingCost\": \"<double>\",\n          \"shippingDetails\": \"<string>\",\n          \"grandTotal\": \"<double>\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\",\n          \"orderItem\": [\n            {\n              \"id\": \"<long>\",\n              \"quantity\": \"<integer>\",\n              \"unitPrice\": \"<double>\",\n              \"tax\": \"<double>\",\n              \"discount\": \"<integer>\",\n              \"subTotal\": \"<double>\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\",\n              \"product\": {\n                \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n              }\n            },\n            {\n              \"id\": \"<long>\",\n              \"quantity\": \"<integer>\",\n              \"unitPrice\": \"<double>\",\n              \"tax\": \"<double>\",\n              \"discount\": \"<integer>\",\n              \"subTotal\": \"<double>\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\",\n              \"product\": {\n                \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n              }\n            }\n          ],\n          \"transaction\": [\n            {\n              \"id\": \"<long>\",\n              \"transaction\": \"CREATED\",\n              \"createAt\": \"<dateTime>\"\n            },\n            {\n              \"id\": \"<long>\",\n              \"transaction\": \"CANCELED\",\n              \"createAt\": \"<dateTime>\"\n            }\n          ],\n          \"payments\": [\n            {\n              \"id\": \"<long>\",\n              \"amount\": \"<double>\",\n              \"provider\": \"<string>\",\n              \"status\": \"REFUNDED\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\"\n            },\n            {\n              \"id\": \"<long>\",\n              \"amount\": \"<double>\",\n              \"provider\": \"<string>\",\n              \"status\": \"COMPLETED\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\"\n            }\n          ],\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"address\": {\n            \"id\": \"<long>\",\n            \"title\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"phone\": \"<string>\",\n            \"email\": \"<string>\",\n            \"address\": \"<string>\",\n            \"province\": \"<string>\",\n            \"city\": \"<string>\",\n            \"country\": \"<string>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            },\n            \"orderAddress\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n              }\n            ]\n          }\n        },\n        {\n          \"id\": \"<long>\",\n          \"code\": \"<string>\",\n          \"status\": \"CANCELED\",\n          \"subTotal\": \"<double>\",\n          \"discount\": \"<double>\",\n          \"tax\": \"<double>\",\n          \"contactName\": \"<string>\",\n          \"contactPhone\": \"<string>\",\n          \"shippingCost\": \"<double>\",\n          \"shippingDetails\": \"<string>\",\n          \"grandTotal\": \"<double>\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\",\n          \"orderItem\": [\n            {\n              \"id\": \"<long>\",\n              \"quantity\": \"<integer>\",\n              \"unitPrice\": \"<double>\",\n              \"tax\": \"<double>\",\n              \"discount\": \"<integer>\",\n              \"subTotal\": \"<double>\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\",\n              \"product\": {\n                \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n              }\n            },\n            {\n              \"id\": \"<long>\",\n              \"quantity\": \"<integer>\",\n              \"unitPrice\": \"<double>\",\n              \"tax\": \"<double>\",\n              \"discount\": \"<integer>\",\n              \"subTotal\": \"<double>\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\",\n              \"product\": {\n                \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n              }\n            }\n          ],\n          \"transaction\": [\n            {\n              \"id\": \"<long>\",\n              \"transaction\": \"COMPLETED\",\n              \"createAt\": \"<dateTime>\"\n            },\n            {\n              \"id\": \"<long>\",\n              \"transaction\": \"CREATED\",\n              \"createAt\": \"<dateTime>\"\n            }\n          ],\n          \"payments\": [\n            {\n              \"id\": \"<long>\",\n              \"amount\": \"<double>\",\n              \"provider\": \"<string>\",\n              \"status\": \"COMPLETED\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\"\n            },\n            {\n              \"id\": \"<long>\",\n              \"amount\": \"<double>\",\n              \"provider\": \"<string>\",\n              \"status\": \"FAILED\",\n              \"createAt\": \"<dateTime>\",\n              \"updateAt\": \"<dateTime>\"\n            }\n          ],\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"address\": {\n            \"id\": \"<long>\",\n            \"title\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"phone\": \"<string>\",\n            \"email\": \"<string>\",\n            \"address\": \"<string>\",\n            \"province\": \"<string>\",\n            \"city\": \"<string>\",\n            \"country\": \"<string>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            },\n            \"orderAddress\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n              }\n            ]\n          }\n        }\n      ],\n      \"confirmationTokens\": [\n        {\n          \"id\": \"<long>\",\n          \"token\": \"<string>\",\n          \"createdAt\": \"<dateTime>\",\n          \"expiresAt\": \"<dateTime>\",\n          \"confirmedAt\": \"<dateTime>\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          }\n        }\n      ],\n      \"basket\": {\n        \"id\": \"<long>\",\n        \"basketUUID\": \"<string>\",\n        \"grandTotal\": \"<double>\",\n        \"createAt\": \"<dateTime>\",\n        \"basketItem\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n          }\n        ]\n      }\n    }\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "brand-controller",
+			"item": [
+				{
+					"name": "get Brand By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/brand/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"brand",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/brand/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"brand",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"status\": \"PUBLISHED\",\n  \"builtIn\": \"<boolean>\",\n  \"createAt\": \"<dateTime>\",\n  \"updateAt\": \"<dateTime>\",\n  \"product\": [\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"shortDesc\": \"<string>\",\n      \"longDesc\": \"<string>\",\n      \"price\": \"<double>\",\n      \"discountedPrice\": \"<double>\",\n      \"tax\": \"<double>\",\n      \"discount\": \"<integer>\",\n      \"stockAmount\": \"<integer>\",\n      \"status\": \"PUBLISHED\",\n      \"width\": \"<double>\",\n      \"length\": \"<double>\",\n      \"height\": \"<double>\",\n      \"createAt\": \"<dateTime>\",\n      \"updateAt\": \"<dateTime>\",\n      \"brand\": {\n        \"value\": \"<Circular reference to #/components/schemas/Brand detected>\"\n      },\n      \"category\": {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"status\": \"PUBLISHED\",\n        \"createAt\": \"<dateTime>\",\n        \"updateAt\": \"<dateTime>\"\n      },\n      \"basketItem\": [\n        {\n          \"id\": \"<long>\",\n          \"quantity\": \"<integer>\",\n          \"totalPrice\": \"<double>\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\",\n          \"product\": {\n            \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n          },\n          \"basket\": {\n            \"id\": \"<long>\",\n            \"basketUUID\": \"<string>\",\n            \"grandTotal\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"basketItem\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n              }\n            ]\n          }\n        }\n      ],\n      \"orderItems\": [\n        {\n          \"id\": \"<long>\",\n          \"quantity\": \"<integer>\",\n          \"unitPrice\": \"<double>\",\n          \"tax\": \"<double>\",\n          \"discount\": \"<integer>\",\n          \"subTotal\": \"<double>\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\",\n          \"product\": {\n            \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n          }\n        }\n      ],\n      \"image\": [\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"showcase\": \"<boolean>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"shortDesc\": \"<string>\",\n      \"longDesc\": \"<string>\",\n      \"price\": \"<double>\",\n      \"discountedPrice\": \"<double>\",\n      \"tax\": \"<double>\",\n      \"discount\": \"<integer>\",\n      \"stockAmount\": \"<integer>\",\n      \"status\": \"NOT_PUBLISHED\",\n      \"width\": \"<double>\",\n      \"length\": \"<double>\",\n      \"height\": \"<double>\",\n      \"createAt\": \"<dateTime>\",\n      \"updateAt\": \"<dateTime>\",\n      \"brand\": {\n        \"value\": \"<Circular reference to #/components/schemas/Brand detected>\"\n      },\n      \"category\": {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"status\": \"NOT_PUBLISHED\",\n        \"createAt\": \"<dateTime>\",\n        \"updateAt\": \"<dateTime>\"\n      },\n      \"basketItem\": [\n        {\n          \"id\": \"<long>\",\n          \"quantity\": \"<integer>\",\n          \"totalPrice\": \"<double>\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\",\n          \"product\": {\n            \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n          },\n          \"basket\": {\n            \"id\": \"<long>\",\n            \"basketUUID\": \"<string>\",\n            \"grandTotal\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"basketItem\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n              }\n            ]\n          }\n        }\n      ],\n      \"orderItems\": [\n        {\n          \"id\": \"<long>\",\n          \"quantity\": \"<integer>\",\n          \"unitPrice\": \"<double>\",\n          \"tax\": \"<double>\",\n          \"discount\": \"<integer>\",\n          \"subTotal\": \"<double>\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\",\n          \"product\": {\n            \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n          }\n        }\n      ],\n      \"image\": [\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"showcase\": \"<boolean>\"\n        }\n      ]\n    }\n  ],\n  \"image\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"type\": \"<string>\",\n    \"showcase\": \"<boolean>\"\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "update Brand",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"deneme2\",\n  \"status\": \"PUBLISHED\",\n  \"image\": \"6ff717bb-97fd-4b8a-a2d5-5232f415d3af\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/brand/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"brand",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"status\": \"PUBLISHED\",\n  \"image\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/brand/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"brand",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "delete Brand By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/brand/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"brand",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/brand/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"brand",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "add Brand By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"brand1\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/brand/6ff717bb-97fd-4b8a-a2d5-5232f415d3af",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"brand",
+								"6ff717bb-97fd-4b8a-a2d5-5232f415d3af"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/brand/:imageId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"brand",
+										":imageId"
+									],
+									"variable": [
+										{
+											"key": "imageId"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "get All Brands For Option 1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/brand/option",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"brand",
+								"option"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/brand/option",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"brand",
+										"option"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"status\": \"NOT_PUBLISHED\",\n    \"builtIn\": \"<boolean>\",\n    \"createAt\": \"<dateTime>\",\n    \"updateAt\": \"<dateTime>\",\n    \"product\": [\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"shortDesc\": \"<string>\",\n        \"longDesc\": \"<string>\",\n        \"price\": \"<double>\",\n        \"discountedPrice\": \"<double>\",\n        \"tax\": \"<double>\",\n        \"discount\": \"<integer>\",\n        \"stockAmount\": \"<integer>\",\n        \"status\": \"PUBLISHED\",\n        \"width\": \"<double>\",\n        \"length\": \"<double>\",\n        \"height\": \"<double>\",\n        \"createAt\": \"<dateTime>\",\n        \"updateAt\": \"<dateTime>\",\n        \"brand\": {\n          \"value\": \"<Circular reference to #/components/schemas/Brand detected>\"\n        },\n        \"category\": {\n          \"id\": \"<long>\",\n          \"title\": \"<string>\",\n          \"status\": \"NOT_PUBLISHED\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\"\n        },\n        \"basketItem\": [\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"totalPrice\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            },\n            \"basket\": {\n              \"id\": \"<long>\",\n              \"basketUUID\": \"<string>\",\n              \"grandTotal\": \"<double>\",\n              \"createAt\": \"<dateTime>\",\n              \"basketItem\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n                }\n              ]\n            }\n          }\n        ],\n        \"orderItems\": [\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"unitPrice\": \"<double>\",\n            \"tax\": \"<double>\",\n            \"discount\": \"<integer>\",\n            \"subTotal\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            }\n          }\n        ],\n        \"image\": [\n          {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"showcase\": \"<boolean>\"\n          }\n        ]\n      },\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"shortDesc\": \"<string>\",\n        \"longDesc\": \"<string>\",\n        \"price\": \"<double>\",\n        \"discountedPrice\": \"<double>\",\n        \"tax\": \"<double>\",\n        \"discount\": \"<integer>\",\n        \"stockAmount\": \"<integer>\",\n        \"status\": \"PUBLISHED\",\n        \"width\": \"<double>\",\n        \"length\": \"<double>\",\n        \"height\": \"<double>\",\n        \"createAt\": \"<dateTime>\",\n        \"updateAt\": \"<dateTime>\",\n        \"brand\": {\n          \"value\": \"<Circular reference to #/components/schemas/Brand detected>\"\n        },\n        \"category\": {\n          \"id\": \"<long>\",\n          \"title\": \"<string>\",\n          \"status\": \"PUBLISHED\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\"\n        },\n        \"basketItem\": [\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"totalPrice\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            },\n            \"basket\": {\n              \"id\": \"<long>\",\n              \"basketUUID\": \"<string>\",\n              \"grandTotal\": \"<double>\",\n              \"createAt\": \"<dateTime>\",\n              \"basketItem\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n                }\n              ]\n            }\n          }\n        ],\n        \"orderItems\": [\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"unitPrice\": \"<double>\",\n            \"tax\": \"<double>\",\n            \"discount\": \"<integer>\",\n            \"subTotal\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            }\n          }\n        ],\n        \"image\": [\n          {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"showcase\": \"<boolean>\"\n          }\n        ]\n      }\n    ],\n    \"image\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"showcase\": \"<boolean>\"\n    }\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"status\": \"NOT_PUBLISHED\",\n    \"builtIn\": \"<boolean>\",\n    \"createAt\": \"<dateTime>\",\n    \"updateAt\": \"<dateTime>\",\n    \"product\": [\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"shortDesc\": \"<string>\",\n        \"longDesc\": \"<string>\",\n        \"price\": \"<double>\",\n        \"discountedPrice\": \"<double>\",\n        \"tax\": \"<double>\",\n        \"discount\": \"<integer>\",\n        \"stockAmount\": \"<integer>\",\n        \"status\": \"NOT_PUBLISHED\",\n        \"width\": \"<double>\",\n        \"length\": \"<double>\",\n        \"height\": \"<double>\",\n        \"createAt\": \"<dateTime>\",\n        \"updateAt\": \"<dateTime>\",\n        \"brand\": {\n          \"value\": \"<Circular reference to #/components/schemas/Brand detected>\"\n        },\n        \"category\": {\n          \"id\": \"<long>\",\n          \"title\": \"<string>\",\n          \"status\": \"PUBLISHED\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\"\n        },\n        \"basketItem\": [\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"totalPrice\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            },\n            \"basket\": {\n              \"id\": \"<long>\",\n              \"basketUUID\": \"<string>\",\n              \"grandTotal\": \"<double>\",\n              \"createAt\": \"<dateTime>\",\n              \"basketItem\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n                }\n              ]\n            }\n          }\n        ],\n        \"orderItems\": [\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"unitPrice\": \"<double>\",\n            \"tax\": \"<double>\",\n            \"discount\": \"<integer>\",\n            \"subTotal\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            }\n          }\n        ],\n        \"image\": [\n          {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"showcase\": \"<boolean>\"\n          }\n        ]\n      },\n      {\n        \"id\": \"<long>\",\n        \"title\": \"<string>\",\n        \"shortDesc\": \"<string>\",\n        \"longDesc\": \"<string>\",\n        \"price\": \"<double>\",\n        \"discountedPrice\": \"<double>\",\n        \"tax\": \"<double>\",\n        \"discount\": \"<integer>\",\n        \"stockAmount\": \"<integer>\",\n        \"status\": \"PUBLISHED\",\n        \"width\": \"<double>\",\n        \"length\": \"<double>\",\n        \"height\": \"<double>\",\n        \"createAt\": \"<dateTime>\",\n        \"updateAt\": \"<dateTime>\",\n        \"brand\": {\n          \"value\": \"<Circular reference to #/components/schemas/Brand detected>\"\n        },\n        \"category\": {\n          \"id\": \"<long>\",\n          \"title\": \"<string>\",\n          \"status\": \"PUBLISHED\",\n          \"createAt\": \"<dateTime>\",\n          \"updateAt\": \"<dateTime>\"\n        },\n        \"basketItem\": [\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"totalPrice\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            },\n            \"basket\": {\n              \"id\": \"<long>\",\n              \"basketUUID\": \"<string>\",\n              \"grandTotal\": \"<double>\",\n              \"createAt\": \"<dateTime>\",\n              \"basketItem\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n                }\n              ]\n            }\n          }\n        ],\n        \"orderItems\": [\n          {\n            \"id\": \"<long>\",\n            \"quantity\": \"<integer>\",\n            \"unitPrice\": \"<double>\",\n            \"tax\": \"<double>\",\n            \"discount\": \"<integer>\",\n            \"subTotal\": \"<double>\",\n            \"createAt\": \"<dateTime>\",\n            \"updateAt\": \"<dateTime>\",\n            \"product\": {\n              \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n            }\n          }\n        ],\n        \"image\": [\n          {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"showcase\": \"<boolean>\"\n          }\n        ]\n      }\n    ],\n    \"image\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"showcase\": \"<boolean>\"\n    }\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "basket-controller",
+			"item": [
+				{
+					"name": "change Quantity",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"description": "(Required) ",
+								"key": "basketUUID",
+								"value": "<string>"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"productId\": \"<long>\",\n  \"updateAt\": \"<dateTime>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/basket/:operator",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"basket",
+								":operator"
+							],
+							"variable": [
+								{
+									"key": "operator",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) ",
+										"key": "basketUUID",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"productId\": \"<long>\",\n  \"updateAt\": \"<dateTime>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/basket/:operator",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"basket",
+										":operator"
+									],
+									"variable": [
+										{
+											"key": "operator"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"productId\": \"<long>\",\n  \"quantity\": \"<long>\",\n  \"title\": \"<string>\",\n  \"imageId\": \"<string>\",\n  \"unitPrice\": \"<double>\",\n  \"discountedPrice\": \"<double>\",\n  \"totalPrice\": \"<double>\",\n  \"discount\": \"<integer>\",\n  \"tax\": \"<double>\",\n  \"createAt\": \"<dateTime>\",\n  \"updateAt\": \"<dateTime>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get Basket",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "basketUUD",
+								"value": " "
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/basket",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"basket"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "basketUUD",
+										"value": "<string>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/basket",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"basket"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"basketUUID\": \"<string>\",\n  \"grandTotal\": \"<double>\",\n  \"createAt\": \"<dateTime>\",\n  \"basketItem\": [\n    {\n      \"id\": \"<long>\",\n      \"quantity\": \"<integer>\",\n      \"totalPrice\": \"<double>\",\n      \"createAt\": \"<dateTime>\",\n      \"updateAt\": \"<dateTime>\",\n      \"product\": {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      },\n      \"basket\": {\n        \"id\": \"<long>\",\n        \"basketUUID\": \"<string>\",\n        \"grandTotal\": \"<double>\",\n        \"createAt\": \"<dateTime>\",\n        \"basketItem\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"<long>\",\n      \"quantity\": \"<integer>\",\n      \"totalPrice\": \"<double>\",\n      \"createAt\": \"<dateTime>\",\n      \"updateAt\": \"<dateTime>\",\n      \"product\": {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      },\n      \"basket\": {\n        \"id\": \"<long>\",\n        \"basketUUID\": \"<string>\",\n        \"grandTotal\": \"<double>\",\n        \"createAt\": \"<dateTime>\",\n        \"basketItem\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/BasketItem detected>\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "create Basket Item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) ",
+								"key": "basketUUID",
+								"value": "<string>"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"productId\": \"<long>\",\n  \"quantity\": \"<integer>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/basket",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"basket"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) ",
+										"key": "basketUUID",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"productId\": \"<long>\",\n  \"quantity\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/basket",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"basket"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "delete Cart Item",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"description": "(Required) ",
+								"key": "basketUUID",
+								"value": "<string>"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/basket/:productId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"basket",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "<long>"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"description": "(Required) ",
+										"key": "basketUUID",
+										"value": "<string>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/basket/:productId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"basket",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user-jwt-controller",
+			"item": [
+				{
+					"name": "register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"Taha\",\n  \"lastName\": \"Turkmenoglu\",\n  \"password\": \"123456\",\n  \"phone\": \"595-931-1950\",\n  \"email\": \"tturkmenoglu1@gmail.com\",\n  \"birthDate\": \"21-07-2001\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"phone\": \"7620796109\",\n  \"email\": \"<string>\",\n  \"birthDate\": \"<date>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "basketUUID",
+								"value": "9280c44d-18c0-4bd8-b741-72cab3a71f55"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"tturkmenoglu1@gmail.com\",\n  \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "basketUUID",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"token\": \"<string>\",\n  \"basketUUID\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "confirm",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/confirm?token=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"confirm"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/confirm?token=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"confirm"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "image-file-controller",
+			"item": [
+				{
+					"name": "upload File",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Viktor/Desktop/auto-part-logo.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/image/upload",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"image",
+								"upload"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/image/upload?image=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"image",
+										"upload"
+									],
+									"query": [
+										{
+											"key": "image",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {},\n  \"imageid\": [\n    \"<string>\"\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "set Showcase Image",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/image/showcase?productId=<long>&imageId=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"image",
+								"showcase"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "<long>",
+									"description": "(Required) "
+								},
+								{
+									"key": "imageId",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/image/showcase?productId=<long>&imageId=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"image",
+										"showcase"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "<long>",
+											"description": "(Required) "
+										},
+										{
+											"key": "imageId",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "get All Images",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/image",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"image"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/image",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"image"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"type\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"type\": \"<string>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "get Image File",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/image/download/5cd0c3ac-9373-4dd2-9ac8-68f8d41c1c0c",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"image",
+								"download",
+								"5cd0c3ac-9373-4dd2-9ac8-68f8d41c1c0c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/image/download/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"image",
+										"download",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  \"<string>\",\n  \"<string>\"\n]"
+						}
+					]
+				},
+				{
+					"name": "display Image",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{baseUrl}}/image/display/5cd0c3ac-9373-4dd2-9ac8-68f8d41c1c0c",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"image",
+								"display",
+								"5cd0c3ac-9373-4dd2-9ac8-68f8d41c1c0c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/image/display/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"image",
+										"display",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  \"<string>\",\n  \"<string>\"\n]"
+						}
+					]
+				},
+				{
+					"name": "delete Image File",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dHVya21lbm9nbHUxQGdtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NjQ4NzYyNSwiZXhwIjoxNjg2NTc0MDI1fQ.lS4Ro-aWuBaMJE6pNlbIrZnSwMkVnWUAC1rUgU_PubicDzLtuMCzJurwsUb9KR0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/image/5cd0c3ac-9373-4dd2-9ac8-68f8d41c1c0c",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"image",
+								"5cd0c3ac-9373-4dd2-9ac8-68f8d41c1c0c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/image/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"image",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"data\": {}\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}

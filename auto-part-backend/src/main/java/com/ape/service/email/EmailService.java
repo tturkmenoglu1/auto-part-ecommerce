@@ -161,9 +161,6 @@ public class EmailService implements EmailSender{
                 "        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"max-width: 600px;\">\n" +
                 "          <tr>\n" +
                 "            <td align=\"center\" valign=\"top\" style=\"padding: 36px 24px;\">\n" +
-                "              <a href=\"https://www.blogdesire.com\" target=\"_blank\" style=\"display: inline-block;\">\n" +
-                "                <img src=\"https://www.blogdesire.com/wp-content/uploads/2019/07/blogdesire-1.png\" alt=\"Logo\" border=\"0\" width=\"48\" style=\"display: block; width: 48px; max-width: 48px; min-width: 48px;\">\n" +
-                "              </a>\n" +
                 "            </td>\n" +
                 "          </tr>\n" +
                 "        </table>\n" +

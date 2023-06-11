@@ -23,7 +23,6 @@ public class CreditCardController {
     private final CreditCardService creditCardService;
 
     @PostMapping("/add")
-    @Operation(summary = "This endpoint is for adding new Credit Card")
     @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     public ResponseEntity<APEResponse> addCreditCard(@Valid @RequestBody CreditCardRequest creditCardRequest){
         creditCardService.saveCard(creditCardRequest);
@@ -49,7 +48,7 @@ public class CreditCardController {
     @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     public ResponseEntity<APEResponse> updateCardById(@PathVariable Long id, @Valid @RequestBody CreditCardRequest creditCardRequest){
         CreditCardDTO cardDTO = creditCardService.updateCard(id,creditCardRequest);
-        APEResponse response = new APEResponse(ResponseMessage.CREDIT_CARD_DELETE_MESSAGE, true, cardDTO);
+        APEResponse response = new APEResponse(ResponseMessage.CREDIT_CARD_UPDATE_MESSAGE, true, cardDTO);
         return ResponseEntity.ok(response);
     }
 

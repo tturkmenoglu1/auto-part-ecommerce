@@ -5,7 +5,6 @@ import com.ape.exception.ImageFileException;
 import com.ape.exception.ResourceNotFoundException;
 import com.ape.model.ImageData;
 import com.ape.model.ImageFile;
-import com.ape.model.Product;
 import com.ape.repository.ImageFileRepository;
 import com.ape.utility.ErrorMessage;
 import lombok.RequiredArgsConstructor;

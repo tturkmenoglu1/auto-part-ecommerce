@@ -35,7 +35,7 @@ public class BrandController {
 
     @PostMapping("/{imageId}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<APEResponse> deleteBrandById(@PathVariable("imageId")String imageId, @Valid @RequestBody BrandRequest brandRequest){
+    public ResponseEntity<APEResponse> addBrandById(@PathVariable("imageId")String imageId, @Valid @RequestBody BrandRequest brandRequest){
         brandService.createBrand(imageId,brandRequest);
         APEResponse response = new APEResponse(ResponseMessage.BRAND_CREATE_RESPONSE_MESSAGE,true);
         return ResponseEntity.ok(response);

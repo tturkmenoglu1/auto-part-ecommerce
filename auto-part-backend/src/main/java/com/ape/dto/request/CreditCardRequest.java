@@ -25,7 +25,7 @@ public class CreditCardRequest {
     @NotBlank
     private String nameOnCard;
 
-    @Size(min = 12, max = 12, message = "Please provide the number on the card properly")
+    @Size(min = 16, max = 16, message = "Please provide the number on the card properly")
     private String cardNumber;
 
     @NotNull
